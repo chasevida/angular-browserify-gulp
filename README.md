@@ -50,7 +50,7 @@ The front-end unit tests are kept in relation to their module directory structur
 Karma is set-up to run both Jasmine and Mocha, the only change required is in the test files and the gulp tasks where the config file will need to be changed to `karma.jasmine.config.js`. I pesronally enjoy using Mocha & Chai.
 
 ### Tests - Protractor
-Install all npm packages and then run `./node_modules/protractor/bin/webdriver-manager update` to install Selenium and the Chrome driver locally. Again I've used Mocha and Chai for these and there are specific instructions on how to integrate these with [Protractor](https://github.com/angular/protractor), check out [this repo](https://github.com/angular/protractor/blob/master/docs/using-mocha.md) for more specifics. 
+Install all npm packages and then run `$ ./node_modules/protractor/bin/webdriver-manager update` to install Selenium and the Chrome driver locally. Again I've used Mocha and Chai for these and there are specific instructions on how to integrate these with [Protractor](https://github.com/angular/protractor), check out [this repo](https://github.com/angular/protractor/blob/master/docs/using-mocha.md) for more specifics. 
 
 I've set-up a gulp task to run these tests as opposed to calling a cumbersome command via terminal. Make sure you have an instance of the site running before running `$ gulp e2e`
 
@@ -59,25 +59,25 @@ The default gulp task sets up a development server on port 8080 and watches for 
 
 The gulp build tasks runs the javascript code from `client/js` via the uglify optimiser. All output code is placed in the `public/js` folder.
 
-JS linking is performed when you first fire up gulp. I've not included it with every file change as it was slowing down gulp process. You could easily add a new task/sequence for test driven development that watches for linting. Apart from that it will lint when you build so you can at least catch issues there.
+JS linting is performed when you first fire up gulp. I've not included it with every file change as it was slowing down gulp process. You could easily add a new task/sequence for test driven development that watches for linting. Apart from that it will lint when you build so you can at least catch issues there.
 
 Please note the `public` and `build` directories are periodically cleaned during gulp tasks. DO NOT put source code or artwork in this directory as it will be permanently overwritten/deleted.
 
 ### Project layout
 * 	`build` project files generated for build/compile tasks. 
- 	* 	All content in this directory should be generated via gulp tasks.
- 	* 	Content in here is permanently destroyed periodically.
+ 	* 	all content in this directory should be generated via gulp tasks.
+ 	* 	content in here is permanently destroyed periodically.
 *	`client` contains the client side source code and tests (.js, .styl, .jpg, .png, .gif, .html, .jade)
-*	*   `img` All public images.
-	* 	`js` All front end js source.
-	* 	`styles` All Stylus files.
-	* 	`vendor` All bower components.
+	*   `img` all public images.
+	* 	`js` all front end js source.
+	* 	`styles` all Stylus files.
+	* 	`vendor` all bower components.
 *	`public` is the web root directory where files are served over http.
-	* 	All content in this directory should be generated via gulp tasks.
-	* 	Content in here is permanently destroyed periodically.
-*	`server` contains code to generate the nodejs/express development server.
-*	`test` contains all server side code and e2e tests
-*	`views` contains server side templates that are served as html
+	* 	all content in this directory should be generated via gulp tasks.
+	* 	content in here is permanently destroyed periodically.
+*	`server` contains code to generate the node/express development server.
+*	`test` contains all server side and e2e tests.
+*	`views` contains server side templates that are served as html.
 
 
 ### Thanks
