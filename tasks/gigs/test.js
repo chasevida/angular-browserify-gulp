@@ -9,7 +9,7 @@ var errors  = require('../util/error-handler'),
  * ---------------------------------------------------------------------
  */
 
-gulp.task('test', ['clean', 'env', 'templates'], function() {
+gulp.task('test', ['env', 'templates'], function() {
     
     var opts = global.options || {};
 
