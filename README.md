@@ -38,12 +38,24 @@ This gulp setup is taken from a cool [gulp starter](https://github.com/ArnaudRin
 
 Gulp is an awkward word to type, I suggest making an abbreviated alias.
 
+### Tests - Karma, Jasmine, Mocha & Chai
+The front-end unit tests are kept in relation to their module directory structure similar to Google's recent [best practice document](https://docs.google.com/a/chasevida.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub). It varies a little in that I personally prefer the module pattern as used in ZF2 so it's a mish mash of both.
+
+Karma is set-up to run both Jasmine and Mocha, the only change required is in the test files and the gulp tasks where the config file will need to be changed to `karma.jasmine.config.js`. I pesronally enjoy using Mocha & Chai.
+
+### Tests - Protractor
+Install all npm packages and then run `./node_modules/protractor/bin/webdriver-manager update` to install Selenium and the Chrome driver locally. Again I've used Mocha and Chai for these and there are specific instructions on how to integrate these with [Protractor](https://github.com/angular/protractor), check out [this repo](https://github.com/angular/protractor/blob/master/docs/using-mocha.md) for more specifics. 
+
+I've set-up a gulp task to run these tests as opposed to calling a cumbersome command via terminal. Make sure you have an instance of the site running before running `$ gulp e2e`
+
 ### Working with the project
-The default gulp task sets up a development server on port 8080 and watches for source code changes in the `client` and `views` directories. Changes to `client/js` javascript files are linted and then copied to the public directory verbatim.
+The default gulp task sets up a development server on port 8080 and watches for source code changes in the `client` and `views` directories. Changes to `client/js` javascript files are copied to the public directory verbatim.
 
 The gulp build tasks runs the javascript code from `client/js` via the uglify optimiser. All output code is placed in the `public/js` folder.
 
-Please note the `public` directories are periodically cleaned during gulp tasks. DO NOT put source code or artwork in this directory as it will be permanently overwritten/deleted.
+JS linking is performed when you first fire up gulp. I've not included it with every file change as it was slowing down gulp process. You could easily add a new task/sequence for test driven development that watches for linting. Apart from that it will lint when you build so you can at least catch issues there.
+
+Please note the `public` and `build` directories are periodically cleaned during gulp tasks. DO NOT put source code or artwork in this directory as it will be permanently overwritten/deleted.
 
 ### Project layout
 *	`client` contains the client source code (.js, .styl, .jpg, .png, .gif, .html)
