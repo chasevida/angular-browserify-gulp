@@ -4,14 +4,15 @@ This is a just a sandbox where I'm playing with some libs n' frameworks. At this
 
 
 ### Installation
-The recommended way to get a working copy of this project is to clone the repository.
+Clone the repository to get started. Global dependencies include, Node, Bower, Karma and maybe something else I've forgotten.
 
 	$ git clone git://github.com/chasevida/angular-browserify-gulp
 	$ cd angular-browserify-gulp
 	$ npm install
+	& bower install
 	$ gulp
 
-The last command will run all the required build tasks and run the application on [http://localhost:8080](http://localhost:8080)
+The last command will run the required build tasks and application on [http://localhost:8080](http://localhost:8080)
 
 ### Stack - JavaScript
 
@@ -21,6 +22,8 @@ The last command will run all the required build tasks and run the application o
 *	[Browserify](http://browserify.org/)
 *	[Angular](https://angularjs.org/)
 *	[Karma](https://karma-runner.github.io)
+*	[Stylus](http://learnboost.github.io/stylus/)
+*	[Axis Css](http://roots.cx/axis/)
 
 ### Gulp Tasks
 If your not familiar with [Gulp](http://gulpjs.com/) check it out as this project makes heavy use of it. All gulp tasks can be found at the bottom of the `gulpfile.js`. Some of the main tasks are as follows:
