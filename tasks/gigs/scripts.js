@@ -17,7 +17,7 @@ var browserify  = require('browserify'),
  * ---------------------------------------------------------------------
  */
 
-gulp.task('scripts', ['env'], function() {
+gulp.task('scripts', ['env', 'templates'], function() {
 
     var opts = global.options || {};
 

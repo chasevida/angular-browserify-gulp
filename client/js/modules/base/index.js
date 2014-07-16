@@ -5,7 +5,6 @@
 var counter     = require('./controllers/counter'),
     page        = require('./controllers/page'),
     title       = require('./controllers/title'),
-    ngRoute     = require('../../../vendor/angular-route/angular-route'),
     routes      = require('./routes');
 
 /*

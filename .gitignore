@@ -1,3 +1,4 @@
-node_modules/
+build/
 client/vendor/
+node_modules/
 public/

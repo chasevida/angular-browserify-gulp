@@ -3,11 +3,12 @@ var gulp = require('gulp');
 
 
 var options = {
-    indir:  './client/',
-    outdir: './public/',
-    url:    'http://localhost',
-    port:   ':8080',
-    isDev:  false
+    indir:      './client/',
+    outdir:     './public/',
+    builddir:   './build/',
+    url:        'http://localhost',
+    port:       ':8080',
+    isDev:      false
 };
 
 /* 

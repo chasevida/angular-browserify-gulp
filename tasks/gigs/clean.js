@@ -1,7 +1,7 @@
 
 var errors  = require('../util/error-handler'),
     gulp    = require('gulp'),
-    clean   = require('gulp-rimraf');
+    shell   = require('gulp-shell');
 
 
 /* 
@@ -9,12 +9,14 @@ var errors  = require('../util/error-handler'),
  * ---------------------------------------------------------------------
  */
 
-gulp.task('clean', ['env'], function () {
+gulp.task('clean', function () {
 
-    var opts = global.options || {};
-
-    return gulp.src( opts.outdir + '**/*', { read: false } )
+    return gulp.src( ['./public', './build'], { read: false } )
         .on('error', errors)
-        .pipe( clean({ force: true }) );
+        .pipe(shell([
+            'rm -rf build/',
+            'rm -rf public/'
+        ]));
 
 });
+

@@ -1,21 +1,16 @@
 // modules/base/routes.js
 'use strict';
 
-//var aboutTemplate   = require('./templates/about-tpl.html'),
-//    contactTemplate = require('./templates/contact-tpl.html');
-
 
 module.exports = ['$routeProvider', function( $routeProvider ) {
 
     $routeProvider.when('/about', {
-        templateUrl: 'templates/about-tpl.html',
-        //template:   aboutTemplate,
+        templateUrl: 'base/templates/about-tpl.html',
         controller: 'PageController'
     });
 
     $routeProvider.when('/contact', {
-        templateUrl: 'templates/contact-tpl.html',
-        //template:   contactTemplate,
+        templateUrl: 'base/templates/contact-tpl.html',
         controller: 'PageController'
     });
 
