@@ -1,0 +1,13 @@
+{
+    "development": {
+        "googleAnalytics": "UA-XXXXXXXX-X"
+    },
+
+    "staging": {
+        "googleAnalytics": "UA-XXXXXXXX-X"
+    },
+
+    "production": {
+        "googleAnalytics": "UA-XXXXXXXX-X"
+    }
+}

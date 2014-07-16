@@ -1,0 +1,73 @@
+{
+  "name": "angular-browserify-gulp",
+  "description": "Angular, Browserify & Gulp",
+  "version": "0.0.0",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chasevida/angular-browserify-gulp.git"
+  },
+  "author": "Mark",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/chasevida/angular-browserify-gulp/issues"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "main": "server/server.js",
+  "dependencies": {
+    "body-parser": "~1.4.3",
+    "express": "~4.4.5",
+    "express-error-handler": "~0.5.4",
+    "jade": "~1.3.1",
+    "lodash": "~2.4.1",
+    "method-override": "~2.0.2",
+    "morgan": "~1.1.1"
+  },
+  "devDependencies": {
+    "axis-css": "~0.1.8",
+    "browserify": "~4.2.0",
+    "chai": "~1.9.1",
+    "chai-as-promised": "latest",
+    "gulp": "~3.8.1",
+    "gulp-bump": "~0.1.10",
+    "gulp-if": "~1.2.1",
+    "gulp-imagemin": "~0.6.1",
+    "gulp-jshint": "~1.6.4",
+    "gulp-karma": "~0.0.4",
+    "gulp-livereload": "~2.1.0",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-notify": "~1.4.0",
+    "gulp-protractor": "latest",
+    "gulp-rimraf": "~0.1.0",
+    "gulp-streamify": "~0.0.5",
+    "gulp-stylus": "~1.0.2",
+    "gulp-uglify": "~0.3.1",
+    "gulp-util": "~2.2.19",
+    "jshint-stylish": "~0.2.0",
+    "karma": "latest",
+    "karma-browserify": "latest",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-mocha": "^0.1.4",
+    "karma-jasmine": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-mocha-debug": "^0.1.2",
+    "karma-mocha-reporter": "~0.2.7",
+    "karma-sinon-chai": "~0.2.0",
+    "nib": "~1.0.3",
+    "open": "~0.0.5",
+    "pretty-hrtime": "~0.2.1",
+    "protractor": "latest",
+    "run-sequence": "^0.3.6",
+    "sinon": "~1.10.2",
+    "sinon-chai": "~2.5.0",
+    "stringify": "~2.2.0",
+    "vinyl-source-stream": "~0.1.1"
+  },
+  "config": {
+    "paths": {
+      "scripts": []
+    }
+  }
+}

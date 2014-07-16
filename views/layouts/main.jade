@@ -1,0 +1,54 @@
+doctype
+html(class='no-js', ng-app='mainApp')
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+
+        title AngularJS App
+
+        script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js")
+
+        <!--[if lt IE 9]>
+        script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js")
+        script(type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js")
+        <![endif]-->
+
+        link(rel="stylesheet" type="text/css" href="/css/style.css")
+        link(rel="shortcut icon" href="/favicon.ico?v=1")
+
+        script.
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '#{config.googleAnalytics}']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+    body
+
+        div(class='nav', ng-controller='TitleController')
+
+            .l-container
+            
+                h1.brand
+                    span 
+                        a(href='/#/') {{title}}
+                
+                ul(class='menu l-inline')
+                    li 
+                        a(href='#/about') About
+                    li 
+                        a(href='#/contact') Contact
+
+                    
+        block content
+
+
+        script(src="/js/main.js")
+
+        if env === 'development'
+            script(src="//localhost:35729/livereload.js")
+
