@@ -41,6 +41,9 @@ This gulp setup is taken from a cool [gulp starter](https://github.com/ArnaudRin
 
 Gulp is an awkward word to type, I suggest making an abbreviated alias.
 
+### Angular - Templates
+This repo uses `$templateCache` to load in client side templates. These are generated via `$ gulp templates` and compiled into a module in the `build` directory. This can then be included in the angular app. This allows templates to be developed in html, jade or some other templating language.
+
 ### Tests - Karma, Jasmine, Mocha & Chai
 The front-end unit tests are kept in relation to their module directory structure similar to Google's recent [best practice document](https://docs.google.com/a/chasevida.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub). It varies a little in that I personally prefer the module pattern as used in ZF2 so it's a mish mash of both.
 
@@ -61,11 +64,22 @@ JS linking is performed when you first fire up gulp. I've not included it with e
 Please note the `public` and `build` directories are periodically cleaned during gulp tasks. DO NOT put source code or artwork in this directory as it will be permanently overwritten/deleted.
 
 ### Project layout
-*	`client` contains the client source code (.js, .styl, .jpg, .png, .gif, .html)
-*	`public` is the web root directory where files are served over http. All content in this directory should be generated via the grunt build scripts.
+* 	`build` project files generated for build/compile tasks. 
+ 	* 	All content in this directory should be generated via gulp tasks.
+ 	* 	Content in here is permanently destroyed periodically.
+*	`client` contains the client side source code and tests (.js, .styl, .jpg, .png, .gif, .html, .jade)
+*	*   `img` All public images.
+	* 	`js` All front end js source.
+	* 	`styles` All Stylus files.
+	* 	`vendor` All bower components.
+*	`public` is the web root directory where files are served over http.
+	* 	All content in this directory should be generated via gulp tasks.
+	* 	Content in here is permanently destroyed periodically.
 *	`server` contains code to generate the nodejs/express development server.
-*	`test` contains all source code tests
-*	`views` contains the handlebar templates that are served as html
+*	`test` contains all server side code and e2e tests
+*	`views` contains server side templates that are served as html
 
 
-
+### Thanks
+*	Thanks to [willogden](https://github.com/willogden) who's [angular-acorn](https://github.com/willogden/angular-acorn) repo helped me resolve some browserify/karma integration issues.
+* 	Thanks to [at0g](https://github.com/at0g) who's [Marionette boilerplate](https://github.com/at0g/bens-boilerplate)  inspired me down this path.
