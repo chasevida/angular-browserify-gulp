@@ -36,8 +36,6 @@ If your not familiar with [Gulp](http://gulpjs.com/) check it out as this projec
 	
 	$ gulp test				- runs all test files
 	$ gulp e2e  			- runs all tests via webdriver/selenium etc
-	
-This gulp setup is taken from a cool [gulp starter](https://github.com/ArnaudRinquin/gulp-starter) by Dan Tello who wrote a great article on [working with Gulp](http://viget.com/extend/gulp-browserify-starter-faq). I've just modified it to my taste.
 
 Gulp is an awkward word to type, I suggest making an abbreviated alias.
 
@@ -81,5 +79,6 @@ Please note the `public` and `build` directories are periodically cleaned during
 
 
 ### Thanks
-*	Thanks to [willogden](https://github.com/willogden) who's [angular-acorn](https://github.com/willogden/angular-acorn) repo helped me resolve some browserify/karma integration issues.
-* 	Thanks to [at0g](https://github.com/at0g) who's [Marionette boilerplate](https://github.com/at0g/bens-boilerplate)  inspired me down this path.
+*	Thanks [willogden](https://github.com/willogden), whose [angular-acorn](https://github.com/willogden/angular-acorn) repo helped me resolve browserify/karma integration.
+*	Thanks [Dan Tello](https://github.com/greypants), who wrote a great article on [working with Gulp](http://viget.com/extend/gulp-browserify-starter-faq). I've taken his setup and just modified it to my taste.
+* 	Thanks [at0g](https://github.com/at0g), whose [Marionette boilerplate](https://github.com/at0g/bens-boilerplate)  inspired me down this path.
