@@ -79,6 +79,6 @@ Please note the `public` and `build` directories are periodically cleaned during
 
 
 ### Thanks
-*	Thanks [willogden](https://github.com/willogden), whose [angular-acorn](https://github.com/willogden/angular-acorn) repo helped me resolve browserify/karma integration.
+*	Thanks [Will Ogden](https://github.com/willogden), whose [angular-acorn](https://github.com/willogden/angular-acorn) repo helped me resolve browserify/karma integration.
 *	Thanks [Dan Tello](https://github.com/greypants), who wrote a great article on [working with Gulp](http://viget.com/extend/gulp-browserify-starter-faq). I've taken his setup and just modified it to my taste.
-* 	Thanks [at0g](https://github.com/at0g), whose [Marionette boilerplate](https://github.com/at0g/bens-boilerplate)  inspired me down this path.
+* 	Thanks [Ben Daley](https://github.com/at0g), whose [Marionette boilerplate](https://github.com/at0g/bens-boilerplate)  inspired me down this path.
