@@ -1,12 +1,10 @@
+// tasks/gigs/views.js
 
-var gulp            = require('gulp'),
-    livereload      = require('gulp-livereload');
+var gulp       = require('gulp'),
+    livereload = require('gulp-livereload');
 
-    
-/* 
- * Views
- * ---------------------------------------------------------------------
- */
+
+// Views
 
 gulp.task('views', ['env'], function() {
 

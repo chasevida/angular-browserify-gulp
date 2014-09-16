@@ -1,0 +1,27 @@
+// modules/header.styl
+
+
+// header > module
+.header
+    size        100% 100px
+    overflow    hidden
+    anim( all 0.5s ease-out )
+
+    +above(size-larger)
+        absolute    top left
+        background  black
+        z-index     3999
+
+
+    // header > states
+    &.is-sticky
+
+        +above(size-larger)
+            fixed       top left
+            margin-top  0px
+
+    &.is-pushed-up
+
+        +above(size-larger)
+            margin-top  -120px
+            anim( all 0.01s ease-out )

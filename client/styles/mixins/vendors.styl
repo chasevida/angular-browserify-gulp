@@ -1,0 +1,34 @@
+// mixins/vendors.styl
+
+
+anim(opts)
+    -webkit-transition  opts
+    -moz-transition     opts
+    -ms-transition      opts
+    -o-transition       opts
+    transition          opts
+
+blurr(opts)
+    -webkit-filter      blur(opts)
+    -moz-filter         blur(opts)
+    -ms-filter          blur(opts)
+    -o-filter           blur(opts)
+    filter              blur(opts)
+
+bs(t = cover)
+    -webkit-background-size t
+    -moz-background-size    t
+    -o-background-size      t
+    background-size         t
+
+opacity(n)
+    -ms-filter  unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+    filter      unquote('alpha(opacity=' + round(n * 100) + ')')
+    opacity     n
+
+trans(opts)
+    -webkit-transform   opts
+    -moz-transform      opts
+    -ms-transform       opts
+    -o-transform        opts
+    transform           opts

@@ -1,17 +1,15 @@
+// gulpfile.js
 
-var gulp        = require('gulp'),
-    sequence    = require('run-sequence'),
-    tasks       = require('./tasks');
+var gulp     = require('gulp'),
+    sequence = require('run-sequence'),
+    tasks    = require('./tasks');
 
 
-/* 
- * General
- * ---------------------------------------------------------------------
- */
+// General Commands
 
 gulp.task('default', function(done) {
     sequence(
-        ['env:dev', 'lint', 'favicon', 'images', 'styles', 'scripts', 'server'], 
+        ['env:dev', 'lint', 'favicon', 'images', 'styles', 'scripts', 'server'],
         ['watch', 'open', 'test'], done);
 });
 
@@ -24,4 +22,3 @@ gulp.task('run', function(done) {
 gulp.task('build:run', function(done) {
     sequence(['build'], ['run'], done);
 });
-

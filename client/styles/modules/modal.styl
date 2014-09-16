@@ -1,0 +1,35 @@
+// modules/modal.styl
+
+
+// modal > module
+.modal
+    fixed    top left
+    size     100%
+    z-index  z-overlay
+
+    &.is-hidden
+        display none
+
+
+    // modal > background
+    .background
+        absolute top left
+        size     100%
+        bk       alpha(black, 0.8)
+
+
+    // modal > foreground
+    .foreground
+        absolute top 50% left 50%
+
+
+    // modal > transition
+    &.does-fade
+        anim( all 0.3s ease )
+
+        &.ng-hide-add
+        &.ng-hide-remove
+            display block !important
+
+        &.ng-hide
+            opacity 0

@@ -1,12 +1,10 @@
+// tasks/gigs/open.js
 
-var gulp        = require('gulp'),
-    open        = require('open');
+var gulp = require('gulp'),
+    open = require('open');
 
 
-/* 
- * Open
- * ---------------------------------------------------------------------
- */
+// Open
 
 gulp.task('open', ['env'], function(done) {
 
@@ -15,5 +13,3 @@ gulp.task('open', ['env'], function(done) {
     return done();
 
 });
-
-

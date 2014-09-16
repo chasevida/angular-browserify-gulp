@@ -1,16 +1,13 @@
+// tasks/gigs/templates.js
 
-var gulp            = require('gulp'),
-    errors          = require('../util/error-handler'),
-    jade            = require('gulp-jade'),
-    livereload      = require('gulp-livereload'),
-    templateCache   = require('gulp-angular-templatecache')
+var gulp          = require('gulp'),
+    errors        = require('../util/error-handler'),
+    jade          = require('gulp-jade'),
+    livereload    = require('gulp-livereload'),
+    templateCache = require('gulp-angular-templatecache')
 
 
-
-/* 
- * Templates
- * ---------------------------------------------------------------------
- */
+// Templates
 
 gulp.task('templates', ['env'], function() {
 
@@ -40,5 +37,3 @@ gulp.task('templates:html', ['env'], function() {
         .pipe( gulp.dest( opts.builddir ));
 
 });
-
-

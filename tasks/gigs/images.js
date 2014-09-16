@@ -1,3 +1,4 @@
+// tasks/gigs/images.js
 
 var gulp        = require('gulp'),
     gulpif      = require('gulp-if'),
@@ -6,11 +7,7 @@ var gulp        = require('gulp'),
     livereload  = require('gulp-livereload');
 
 
-
-/* 
- * Images
- * ---------------------------------------------------------------------
- */
+// Images
 
 gulp.task('images', ['env'], function() {
 
@@ -32,4 +29,3 @@ gulp.task('favicon', ['env'], function() {
         .pipe( imagemin( opts.indir ))
         .pipe( gulp.dest( opts.outdir ));
 });
-

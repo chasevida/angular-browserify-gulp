@@ -1,12 +1,10 @@
+// tasks/gigs/server.js
 
-var gulp        = require('gulp'),
-    nodemon     = require('gulp-nodemon');
-    
+var gulp    = require('gulp'),
+    nodemon = require('gulp-nodemon');
 
-/* 
- * Server
- * ---------------------------------------------------------------------
- */
+
+// Server
 
 gulp.task('server', ['env'], function () {
 

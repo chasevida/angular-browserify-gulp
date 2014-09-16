@@ -1,0 +1,26 @@
+// transitions/fade.styl
+
+
+.t-fade 
+    position absolute
+    top     0
+    left    0
+    right   0
+    height  100%
+    opacity 1
+
+.t-fade.ng-enter,
+.t-fade.ng-leave 
+    anim( all 1s ease )
+
+.t-fade.ng-enter 
+    opacity 0
+
+.t-fade.ng-enter-active 
+    opacity 1
+
+.t-fade.ng-leave 
+    opacity 1
+
+.t-fade.ng-leave-active 
+    opacity 0

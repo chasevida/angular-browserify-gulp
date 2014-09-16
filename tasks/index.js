@@ -1,3 +1,4 @@
+// tasks/index.js
 
 var fs          = require('fs'),
     onlyScripts = require('./util/script-filter'),

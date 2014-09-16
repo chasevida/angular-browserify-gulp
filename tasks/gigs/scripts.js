@@ -1,3 +1,4 @@
+// tasks/gigs/scripts.js
 
 var browserify  = require('browserify'),
     errors      = require('../util/error-handler'),
@@ -11,11 +12,7 @@ var browserify  = require('browserify'),
     uglify      = require('gulp-uglify');
 
 
-
-/* 
- * Browserify
- * ---------------------------------------------------------------------
- */
+// Browserify
 
 gulp.task('scripts', ['env', 'templates'], function() {
 
@@ -46,7 +43,6 @@ gulp.task('scripts', ['env', 'templates'], function() {
             .on('update', bundle)
             .on('end', logger.end);
     };
-    
+
     return bundle();
 });
-

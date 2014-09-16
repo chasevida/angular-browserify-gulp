@@ -1,3 +1,4 @@
+// server/server.js
 
 var express             = require('express'),
     errorHandler        = require('express-error-handler'),
@@ -96,5 +97,3 @@ process.on('SIGINT', function() {
     console.warn( 'Express server listening on port ' + app.get('port') + ' exiting');
     process.exit(0);
 });
-
-

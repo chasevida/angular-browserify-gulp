@@ -1,16 +1,14 @@
+// tasks/gigs/test.js
 
-var errors  = require('../util/error-handler'),
-    gulp    = require('gulp'),
-    karma   = require('gulp-karma');
+var errors = require('../util/error-handler'),
+    gulp   = require('gulp'),
+    karma  = require('gulp-karma');
 
 
-/* 
- * Test
- * ---------------------------------------------------------------------
- */
+// Test
 
 gulp.task('test', ['env', 'templates'], function() {
-    
+
     var opts = global.options || {};
 
     return gulp.src( './idontexist' )

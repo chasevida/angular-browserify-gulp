@@ -1,3 +1,4 @@
+// tasks/gigs/bump.js
 
 var gulp    = require('gulp'),
     bump    = require('gulp-bump'),
@@ -7,10 +8,7 @@ var gulp    = require('gulp'),
     pkg     = require(path.join(__dirname, '../../', 'package.json'));
 
 
-/* 
- * Bump
- * ---------------------------------------------------------------------
- */
+// Bump
 
 gulp.task('v', function(done) {
     if ( bwr.version !== pkg.version ) {

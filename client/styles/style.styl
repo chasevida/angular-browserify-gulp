@@ -1,14 +1,53 @@
+// style.styl
 
-@import 'config/fonts'
-@import 'config/variables'
-@import 'config/mixins'
 
+// Settings
+@import 'settings/axis'
+@import 'settings/colors'
+@import 'settings/font-face'
+@import 'settings/font-families'
+@import 'settings/font-sizes'
+@import 'settings/font'
+@import 'settings/grid'
+@import 'settings/sizes'
+@import 'settings/z-scales'
+
+
+// Mixins
+@import 'mixins/shortcuts'
+@import 'mixins/vendors'
+
+
+// Axis - Normalize and Base
 normalize()
 base()
 
-@import 'general/base'
-@import 'general/general'
 
+// Libs - external customised libs
+// should be placed in a 'libs' directory
+
+
+// Utilities
+@import 'utils/utils'
+
+
+// Components
+@import 'components/buttons'
+@import 'components/cloak'
+@import 'components/container'
+@import 'components/icons'
+@import 'components/images'
+
+
+// Modules
+@import 'modules/base'
 @import 'modules/article'
+@import 'modules/footer'
+@import 'modules/header'
+@import 'modules/modal'
 @import 'modules/nav'
 
+
+// Transitions
+@import 'transitions/fade'
+@import 'transitions/slide'

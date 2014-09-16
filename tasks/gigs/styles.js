@@ -1,19 +1,15 @@
+// tasks/gigs/styles.js
 
-var axis            = require('axis-css'),
-    gulp            = require('gulp'),
-    gulpif          = require('gulp-if'),
-    errors          = require('../util/error-handler'),
-    livereload      = require('gulp-livereload'),
-    nib             = require('nib'),
-    stylus          = require('gulp-stylus');
+var axis       = require('axis-css'),
+    gulp       = require('gulp'),
+    gulpif     = require('gulp-if'),
+    errors     = require('../util/error-handler'),
+    livereload = require('gulp-livereload'),
+    nib        = require('nib'),
+    stylus     = require('gulp-stylus');
 
 
-
-
-/* 
- * Styles
- * ---------------------------------------------------------------------
- */
+// Styles
 
 gulp.task('styles', ['env'], function () {
 
@@ -31,4 +27,3 @@ gulp.task('styles', ['env'], function () {
         .pipe( gulpif(opts.isDev, livereload() ));
 
 });
-

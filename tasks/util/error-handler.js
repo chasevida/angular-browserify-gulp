@@ -1,5 +1,7 @@
+// tasks/util/error-handler.js
 
 var notify = require('gulp-notify');
+
 
 module.exports = function() {
 
@@ -11,5 +13,5 @@ module.exports = function() {
     }).apply(this, args);
 
     this.emit('end');
-    
+
 };

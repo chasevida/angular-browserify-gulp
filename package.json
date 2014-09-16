@@ -30,7 +30,7 @@
     "browserify": "~4.2.0",
     "chai": "~1.9.1",
     "chai-as-promised": "latest",
-    "gulp": "~3.8.1",
+    "gulp": "~3.8.7",
     "gulp-angular-templatecache": "latest",
     "gulp-bump": "~0.1.10",
     "gulp-if": "~1.2.1",

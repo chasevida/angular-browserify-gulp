@@ -1,13 +1,11 @@
+// tasks/gigs/clean.js
 
 var errors  = require('../util/error-handler'),
     gulp    = require('gulp'),
     shell   = require('gulp-shell');
 
 
-/* 
- * Clean
- * ---------------------------------------------------------------------
- */
+// Clean
 
 gulp.task('clean', function () {
 
@@ -19,4 +17,3 @@ gulp.task('clean', function () {
         ]));
 
 });
-

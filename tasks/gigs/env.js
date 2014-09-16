@@ -1,3 +1,4 @@
+// tasks/gigs/env.js
 
 var gulp = require('gulp');
 
@@ -11,10 +12,8 @@ var options = {
     isDev:      false
 };
 
-/* 
- * Environment
- * ---------------------------------------------------------------------
- */
+
+// Environment
 
 gulp.task('env', function (done) {
     global.options = options;
@@ -25,5 +24,3 @@ gulp.task('env:dev', ['env'], function (done) {
     global.options.isDev = true;
     return done();
 });
-
-
