@@ -1,9 +1,10 @@
 // modules/base/controllers/page.js
 'use strict';
 
-module.exports = ['$scope', function($scope) {
+module.exports = ['$log', function($log) {
 
-    $scope.title = 'Page: ';
+    $log.info('page controller');
+
+    this.prefix = 'pg:';
 
 }];
-

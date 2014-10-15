@@ -1,6 +1,7 @@
 // tasks/gigs/scripts.js
 
 var browserify  = require('browserify'),
+    concat      = require('gulp-concat'),
     errors      = require('../util/error-handler'),
     gulp        = require('gulp'),
     gulpif      = require('gulp-if'),
@@ -11,6 +12,27 @@ var browserify  = require('browserify'),
     stringify   = require('stringify'),
     uglify      = require('gulp-uglify');
 
+
+// Concatenate libs
+
+gulp.task('scripts:libs', ['env'], function() {
+
+    var opts = global.options || {};
+
+    gulp.src([
+            './client/vendor/lodash/dist/lodash.min.js',
+            './client/vendor/angular/angular.js',
+            './client/vendor/angular-animate/angular-animate.js',
+            './client/vendor/angular-ui-router/release/angular-ui-router.js',
+            './client/vendor/angulartics/dist/angulartics.min.js',
+            './client/vendor/angulartics/dist/angulartics-ga.min.js',
+            './client/vendor/fastclick/lib/fastclick.js',
+            './client/vendor/placeholders/index.js'
+        ])
+        .pipe(concat('libs.js'))
+        .pipe(gulp.dest(opts.outdir + 'js'));
+
+});
 
 // Browserify
 

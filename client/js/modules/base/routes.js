@@ -2,21 +2,21 @@
 'use strict';
 
 
-module.exports = ['$routeProvider', function( $routeProvider ) {
+module.exports = ['$stateProvider', '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
 
-    $routeProvider.when('/about', {
-        templateUrl: 'base/templates/about-tpl.html',
-        controller: 'PageController'
+    //$urlRouterProvider.otherwise('/about');
+
+    $stateProvider
+    .state('about', {
+        url:         '/about',
+        templateUrl: 'base/templates/about.html',
+        controller:  'PageController as pg'
+    })
+    .state('contact', {
+        url:         '/contact',
+        templateUrl: 'base/templates/contact.html',
+        controller:  'PageController as pg'
     });
-
-    $routeProvider.when('/contact', {
-        templateUrl: 'base/templates/contact-tpl.html',
-        controller: 'PageController'
-    });
-
-    /*$routeProvider.otherwise({
-        redirectTo: '/about'
-    });*/
 
 }];
-
