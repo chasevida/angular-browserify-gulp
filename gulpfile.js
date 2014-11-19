@@ -1,24 +1,41 @@
 // gulpfile.js
 
-var gulp     = require('gulp'),
-    sequence = require('run-sequence'),
-    tasks    = require('./tasks');
+var gulp       = require('gulp'),
+    requireDir = require('require-dir'),
+    sequence   = require('run-sequence');
+
+requireDir('./gulp/tasks', { recurse: true });
 
 
-// General Commands
+
+// Task Sequences
 
 gulp.task('default', function(done) {
-    sequence(
-        ['env:dev', 'lint', 'favicon', 'images', 'styles', 'scripts:libs', 'scripts', 'server'],
-        ['watch', 'open', 'test'], done);
+    sequence([
+        'env:dev',
+        'favicon',
+        'images',
+        'styles',
+        'scripts:libs',
+        'scripts',
+        'server'
+    ], [
+        'watch',
+        'open',
+        'test'
+    ], done);
 });
 
-gulp.task('build', ['lint', 'favicon', 'images', 'styles', 'scripts:libs', 'scripts', 'test']);
+gulp.task('build', [
+    'favicon',
+    'images',
+    'styles',
+    'scripts:libs',
+    'scripts',
+    'test'
+]);
 
 gulp.task('run', function(done) {
     sequence(['server'], ['open'], done);
 });
 
-gulp.task('build:run', function(done) {
-    sequence(['build'], ['run'], done);
-});

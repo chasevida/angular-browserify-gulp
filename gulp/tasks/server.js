@@ -1,20 +1,19 @@
-// tasks/gigs/server.js
+// gulp/tasks/server.js
 
-var gulp    = require('gulp'),
+var config  = require('../config').env,
+    gulp    = require('gulp'),
     nodemon = require('gulp-nodemon');
 
 
 // Server
 
-gulp.task('server', ['env'], function () {
-
-    var opts = global.options || {};
+gulp.task('server',  function () {
 
     return nodemon({
         script: 'server/server.js',
         ext: 'js html',
         env: {
-            'NODE_ENV': opts.isDev ? 'development' : 'production'
+            'NODE_ENV': config.development ? 'development' : 'production'
         }
     })
     .on('start', [])

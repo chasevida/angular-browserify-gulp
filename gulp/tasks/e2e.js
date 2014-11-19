@@ -1,4 +1,4 @@
-// tasks/gigs/e2e.js
+// gulp/tasks/e2e.js
 
 var gulp        = require('gulp'),
     errors      = require('../util/error-handler'),

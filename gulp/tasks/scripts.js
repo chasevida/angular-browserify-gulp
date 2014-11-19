@@ -1,6 +1,7 @@
-// tasks/gigs/scripts.js
+// gulp/tasks/scripts.js
 
 var browserify  = require('browserify'),
+    config      = require('../config'),
     concat      = require('gulp-concat'),
     errors      = require('../util/error-handler'),
     gulp        = require('gulp'),
@@ -15,9 +16,7 @@ var browserify  = require('browserify'),
 
 // Concatenate libs
 
-gulp.task('scripts:libs', ['env'], function() {
-
-    var opts = global.options || {};
+gulp.task('scripts:libs', function() {
 
     gulp.src([
             './client/vendor/lodash/dist/lodash.min.js',
@@ -27,18 +26,17 @@ gulp.task('scripts:libs', ['env'], function() {
             './client/vendor/angulartics/dist/angulartics.min.js',
             './client/vendor/angulartics/dist/angulartics-ga.min.js',
             './client/vendor/fastclick/lib/fastclick.js',
-            './client/vendor/placeholders/index.js'
+            './client/vendor/placeholders/config.js'
         ])
         .pipe(concat('libs.js'))
-        .pipe(gulp.dest(opts.outdir + 'js'));
+        .pipe(gulp.dest(config.paths.dist + 'js'));
 
 });
 
 // Browserify
 
-gulp.task('scripts', ['env', 'templates'], function() {
+gulp.task('scripts', ['templates'], function() {
 
-    var opts = global.options || {};
 
     var uglifyOptions = {
         mangle: false,
@@ -48,20 +46,25 @@ gulp.task('scripts', ['env', 'templates'], function() {
     };
 
     var bundleStream = browserify({
-        entries: [ opts.indir + 'js/main' ],
-        extensions: ['.js', '.html'],
-    }).transform( stringify(['.html']) );
+        entries: [config.paths.src + 'js/main'],
+        extensions: ['.js', '.html']
+    }).transform(stringify(['.html']));
+
 
     var bundle = function() {
         logger.start();
 
+        console.log(config.env.development);
+        console.log('env: ' + (config.env.development));
+        console.log('env: ' + (!config.env.development));
+
         return bundleStream
             .bundle({ debug: true })
             .on('error', errors)
-            .pipe(source( 'main.js' ))
-            .pipe( gulpif( !opts.isDev, streamify( uglify(uglifyOptions) )))
-            .pipe(gulp.dest( opts.outdir + 'js' ))
-            .pipe( gulpif(opts.isDev, livereload() ))
+            .pipe(source('main.js'))
+            .pipe(gulpif(!config.env.development, streamify(uglify(uglifyOptions))))
+            .pipe(gulp.dest(config.paths.dist + 'js'))
+            .pipe(gulpif(config.env.development, livereload()))
             .on('update', bundle)
             .on('end', logger.end);
     };

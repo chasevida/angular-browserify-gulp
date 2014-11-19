@@ -1,4 +1,4 @@
-// tasks/gigs/test.js
+// gulp/tasks/test.js
 
 var errors = require('../util/error-handler'),
     gulp   = require('gulp'),
@@ -7,11 +7,9 @@ var errors = require('../util/error-handler'),
 
 // Test
 
-gulp.task('test', ['env', 'templates'], function() {
+gulp.task('test', ['templates'], function() {
 
-    var opts = global.options || {};
-
-    return gulp.src( './idontexist' )
+    return gulp.src('./idontexist')
         .pipe(karma({
             configFile: './config/karma.config.js',
             action:     'run'
