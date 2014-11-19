@@ -30,7 +30,6 @@ If your not familiar with [Gulp](http://gulpjs.com/) check it out as this projec
 
 	$ gulp					- runs the app and watches for changes on http://localhost:8080
 	$ gulp build			- builds a dist version in the public directory
-	$ gulp build:run 		- builds a dist version and runs the server
 	
 	$ gulp clean 			- a temperamental method to clean the public directory
 	
@@ -43,7 +42,7 @@ Gulp is an awkward word to type, I suggest making an abbreviated alias.
 This repo uses `$templateCache` to load in client side templates. These are generated via `$ gulp templates` and compiled into a module in the `build` directory. This can then be included in the angular app. This allows templates to be developed in html, jade or some other templating language.
 
 ### Tests - Karma, Jasmine, Mocha & Chai
-The front-end unit tests are kept in relation to their module directory structure similar to Google's recent [best practice document](https://docs.google.com/a/chasevida.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub). It varies a little in that I personally prefer the module pattern as used in ZF2 so it's a mish mash of both.
+The front-end unit tests are kept in relation to their module directory structure similar to Google's recent [best practice document](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub). It varies a little in that I personally prefer the module pattern as used in ZF2 so it's a mish mash of both.
 
 Karma is set-up to run both Jasmine and Mocha, the only change required is in the test files and the gulp tasks where the config file will need to be changed to `karma.jasmine.config.js`. I pesronally enjoy using Mocha & Chai.
 
