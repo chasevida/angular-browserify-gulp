@@ -1,16 +1,13 @@
 // transitions/slide.styl
 
 
-.t-slide 
-    position absolute
-    left    0
-    top     0
-    width   100%
-    height  100%
+.t-slide
+    absolute top left
+    size     100%
 
 .t-slide.ng-enter,
 .t-slide.ng-leave 
-    anim( all 1s ease )
+    transition all 1s ease
 
 .t-slide.ng-enter 
     left 100%

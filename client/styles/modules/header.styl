@@ -3,14 +3,14 @@
 
 // header > module
 .header
-    size        100% 100px
-    overflow    hidden
-    anim( all 0.5s ease-out )
+    size       100% 100px
+    overflow   hidden
+    transition all 0.5s ease-out
 
     +above(size-larger)
         absolute    top left
         background  black
-        z-index     3999
+        z-index     z-foreground
 
 
     // header > states
@@ -18,10 +18,10 @@
 
         +above(size-larger)
             fixed       top left
-            margin-top  0px
+            margin-top  0
 
     &.is-pushed-up
 
         +above(size-larger)
-            margin-top  -120px
-            anim( all 0.01s ease-out )
+            margin-top -120px
+            transition all 0.01s ease-out

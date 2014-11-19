@@ -3,17 +3,19 @@
 
 html,
 body
-    size  100%
+    size    100%
+    margin  0
+    padding 0
 
 body
-    bk      white-dark
-    color   grey
+    color    grey
+    bg-color white-dark
 
 a,
 a:visited
     color default-color
     text-decoration none
-    anim( all 0.3s ease-out )
+    transition all 0.3s ease-out
 
 a:hover,
 a:active
@@ -21,7 +23,7 @@ a:active
     text-decoration none
 
 a:focus
-  outline none
+    outline none
 
 input,
 textarea

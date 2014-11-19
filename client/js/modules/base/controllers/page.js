@@ -5,6 +5,6 @@ module.exports = ['$log', function($log) {
 
     $log.info('page controller');
 
-    this.prefix = 'pg:';
+    this.prefix = '*';
 
 }];
