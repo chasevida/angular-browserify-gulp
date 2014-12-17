@@ -61,6 +61,7 @@
     "open": "~0.0.5",
     "pretty-hrtime": "~0.2.1",
     "protractor": "latest",
+    "require-dir": "^0.1.0",
     "run-sequence": "^0.3.6",
     "rupture": "^0.4.0",
     "sinon": "~1.10.2",
