@@ -7,6 +7,12 @@ module.exports = {
         dist:  './public/',
         src:   './client/'
     },
+    globs: {
+        images:  'client/img/**/*',
+        scripts: 'client/js/**/*',
+        styles:  'client/styles/**/*',
+        views:   'views/**/*'
+    },
     url: 'http://localhost',
     port: ':8080',
     env: {

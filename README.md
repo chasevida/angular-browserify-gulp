@@ -9,7 +9,7 @@ Clone the repository to get started. Global dependencies include, Node, Bower, K
 	$ git clone git://github.com/chasevida/angular-browserify-gulp
 	$ cd angular-browserify-gulp
 	$ npm install
-	& bower install
+	$ bower install
 	$ gulp
 
 The last command will run the required build tasks and application on [http://localhost:8080](http://localhost:8080)
