@@ -7,7 +7,7 @@ var globs  = require('../config').globs,
 
 var watcher = function(glob, task) {
 
-    gulp.src(glob)
+    gulp.src('./client')
         .pipe(watch(glob, function() {
 
             gulp.start(task);
