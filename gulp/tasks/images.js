@@ -4,7 +4,7 @@ var config     = require('../config'),
     gulp       = require('gulp'),
     gulpif     = require('gulp-if'),
     errors     = require('../util/error-handler'),
-    imagemin   = require('gulp-imagemin')
+    imagemin   = require('gulp-imagemin'),
     livereload = require('gulp-livereload');
 
 

@@ -1,6 +1,6 @@
 // gulp/tasks/views.js
 
-var config = require('../config').paths,
+var config     = require('../config').paths,
     gulp       = require('gulp'),
     livereload = require('gulp-livereload');
 

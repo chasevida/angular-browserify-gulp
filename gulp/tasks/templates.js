@@ -1,6 +1,6 @@
 // gulp/tasks/templates.js
 
-var config = require('../config').paths,
+var config        = require('../config').paths,
     errors        = require('../util/error-handler'),
     gulp          = require('gulp'),
     jade          = require('gulp-jade'),
