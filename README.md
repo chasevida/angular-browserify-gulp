@@ -12,7 +12,7 @@ Clone the repository to get started. Global dependencies include, Node, Bower, K
 	$ bower install
 	$ gulp
 
-The last command will run the required build tasks and launch the application an appropriate port vai [BrowserSync](http://www.browsersync.io/)
+The last command will run the required build tasks and launch the application on a appropriate port via [BrowserSync](http://www.browsersync.io/)
 
 ### Stack - JavaScript
 
