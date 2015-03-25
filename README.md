@@ -12,7 +12,7 @@ Clone the repository to get started. Global dependencies include, Node, Bower, K
 	$ bower install
 	$ gulp
 
-The last command will run the required build tasks and application on [http://localhost:8080](http://localhost:8080)
+The last command will run the required build tasks and launch the application an appropriate port vai [BrowserSync](http://www.browsersync.io/)
 
 ### Stack - JavaScript
 
@@ -24,6 +24,7 @@ The last command will run the required build tasks and application on [http://lo
 *	[Karma](https://karma-runner.github.io)
 *	[Stylus](http://learnboost.github.io/stylus/)
 *	[Axis Css](http://roots.cx/axis/)
+*	[BrowserSync](http://www.browsersync.io/)
 
 ### Gulp Tasks
 If your not familiar with [Gulp](http://gulpjs.com/) check it out as this project makes heavy use of it. All gulp tasks can be found at the bottom of the `gulpfile.js`. Some of the main tasks are as follows:
