@@ -5,10 +5,11 @@ var autoprefixer = require('autoprefixer-core'),
     config       = require('../config'),
     gulp         = require('gulp'),
     gulpif       = require('gulp-if'),
+    filter       = require('gulp-filter'),
     errors       = require('../util/error-handler'),
-    livereload   = require('gulp-livereload'),
     nib          = require('nib'),
     postcss      = require('gulp-postcss'),
+    reload       = require('browser-sync').reload,
     rupture      = require('rupture'),
     stylus       = require('gulp-stylus');
 
@@ -31,6 +32,7 @@ gulp.task('styles', function () {
         .pipe(postcss(processors))
         .on('error', errors)
         .pipe(gulp.dest( config.paths.dist + 'css/'))
-        .pipe(gulpif(config.env.development, livereload()));
+        .pipe(filter('**/*.css'))
+        .pipe(gulpif(config.env.development, reload({stream: true})));
 
 });

@@ -1,8 +1,8 @@
 // gulp/tasks/views.js
 
-var config     = require('../config').paths,
-    gulp       = require('gulp'),
-    livereload = require('gulp-livereload');
+var config = require('../config').paths,
+    gulp   = require('gulp'),
+    reload = require('browser-sync').reload;
 
 
 // Views
@@ -10,5 +10,5 @@ var config     = require('../config').paths,
 gulp.task('views', function() {
 
     return gulp.src(config.src)
-        .pipe(livereload());
+        .pipe(reload({stream: true}));
 });

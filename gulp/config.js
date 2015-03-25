@@ -13,8 +13,11 @@ module.exports = {
         styles:  'client/styles/**/*',
         views:   'views/**/*'
     },
-    url: 'http://localhost',
-    port: ':8080',
+    url: {
+        protocol: 'http',
+        domain:   'localhost',
+        port:     '8080',
+    },
     env: {
         development: false
     }

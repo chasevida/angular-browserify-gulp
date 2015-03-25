@@ -1,8 +1,8 @@
 // gulp/tasks/server.js
 
-var config  = require('../config').env,
-    gulp    = require('gulp'),
-    nodemon = require('gulp-nodemon');
+var config      = require('../config'),
+    gulp        = require('gulp'),
+    nodemon     = require('gulp-nodemon');
 
 
 // Server
@@ -13,10 +13,10 @@ gulp.task('server',  function () {
         script: 'server/server.js',
         ext: 'js html',
         env: {
-            'NODE_ENV': config.development ? 'development' : 'production'
+            'NODE_ENV': config.env.development ? 'development' : 'production'
         }
     })
-    .on('start', [])
+    .on('start', ['browser-sync'])
     .on('change', [])
     .on('restart', function () {
         console.log('restarted!');

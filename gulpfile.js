@@ -21,7 +21,6 @@ gulp.task('default', function(done) {
         'server'
     ], [
         'watch',
-        'open',
         'test'
     ], done);
 });
@@ -36,6 +35,5 @@ gulp.task('build', [
 ]);
 
 gulp.task('run', function(done) {
-    sequence(['server'], ['open'], done);
+    sequence(['server'], done);
 });
-

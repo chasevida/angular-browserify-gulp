@@ -6,8 +6,8 @@ var browserify  = require('browserify'),
     errors      = require('../util/error-handler'),
     gulp        = require('gulp'),
     gulpif      = require('gulp-if'),
-    livereload  = require('gulp-livereload'),
     logger      = require('../util/bundle-logger'),
+    reload      = require('browser-sync').reload,
     source      = require('vinyl-source-stream'),
     streamify   = require('gulp-streamify'),
     stringify   = require('stringify'),
@@ -37,7 +37,6 @@ gulp.task('scripts:libs', function() {
 
 gulp.task('scripts', ['templates'], function() {
 
-
     var uglifyOptions = {
         mangle: false,
         compress: {
@@ -54,17 +53,13 @@ gulp.task('scripts', ['templates'], function() {
     var bundle = function() {
         logger.start();
 
-        console.log(config.env.development);
-        console.log('env: ' + (config.env.development));
-        console.log('env: ' + (!config.env.development));
-
         return bundleStream
             .bundle({ debug: true })
             .on('error', errors)
             .pipe(source('main.js'))
             .pipe(gulpif(!config.env.development, streamify(uglify(uglifyOptions))))
             .pipe(gulp.dest(config.paths.dist + 'js'))
-            .pipe(gulpif(config.env.development, livereload()))
+            .pipe(gulpif(config.env.development, reload({stream: true})))
             .on('update', bundle)
             .on('end', logger.end);
     };
