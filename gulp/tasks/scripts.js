@@ -25,8 +25,7 @@ gulp.task('scripts:libs', function() {
             './client/vendor/angular-ui-router/release/angular-ui-router.js',
             './client/vendor/angulartics/dist/angulartics.min.js',
             './client/vendor/angulartics/dist/angulartics-ga.min.js',
-            './client/vendor/fastclick/lib/fastclick.js',
-            './client/vendor/placeholders/config.js'
+            './client/vendor/fastclick/lib/fastclick.js'
         ])
         .pipe(concat('libs.js'))
         .pipe(gulp.dest(config.paths.dist + 'js'));
