@@ -1,7 +1,7 @@
 // gulp/tasks/styles.js
 
 var autoprefixer = require('autoprefixer-core'),
-    axis         = require('axis-css'),
+    axis         = require('axis'),
     config       = require('../config'),
     gulp         = require('gulp'),
     gulpif       = require('gulp-if'),
@@ -11,6 +11,7 @@ var autoprefixer = require('autoprefixer-core'),
     postcss      = require('gulp-postcss'),
     reload       = require('browser-sync').reload,
     rupture      = require('rupture'),
+    sourcemaps   = require('gulp-sourcemaps'),
     stylus       = require('gulp-stylus');
 
 
@@ -24,12 +25,14 @@ gulp.task('styles', function () {
     };
 
     var processors = [
-        autoprefixer({browsers: ['last 2 version']})
+        autoprefixer({browsers: 'last 2 versions, > 5%, ie 9'})
     ];
 
     return gulp.src(config.paths.src + 'styles/style.styl')
+        .pipe(gulpif(config.env.development, sourcemaps.init()))
         .pipe(stylus(stylusOptions))
         .pipe(postcss(processors))
+        .pipe(gulpif(config.env.development, sourcemaps.write('.')))
         .on('error', errors)
         .pipe(gulp.dest( config.paths.dist + 'css/'))
         .pipe(filter('**/*.css'))
