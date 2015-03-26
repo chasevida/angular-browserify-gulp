@@ -12,6 +12,8 @@ requireDir('./gulp/tasks', { recurse: true });
 
 gulp.task('default', function(done) {
     sequence([
+        'clean'
+    ], [
         'env:dev',
         'favicon',
         'images',
@@ -25,14 +27,18 @@ gulp.task('default', function(done) {
     ], done);
 });
 
-gulp.task('build', [
-    'favicon',
-    'images',
-    'styles',
-    'scripts:libs',
-    'scripts',
-    'test'
-]);
+gulp.task('build', function(done) {
+    sequence([
+        'clean'
+    ], [
+        'favicon',
+        'images',
+        'styles',
+        'scripts:libs',
+        'scripts',
+        'test'
+    ], done);
+});
 
 gulp.task('run', function(done) {
     sequence(['server'], done);
