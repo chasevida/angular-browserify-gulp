@@ -16,7 +16,7 @@ gulp.task('images', function() {
         .on('error', errors)
         .pipe(gulpif(!config.env.development, imagemin()))
         .pipe(gulp.dest(config.paths.dist + 'img'))
-        .pipe(gulpif(config.env.development, reload({stream: true})));
+        .pipe(reload({stream: true}));
 
 });
 

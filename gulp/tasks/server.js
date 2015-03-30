@@ -16,7 +16,7 @@ gulp.task('server',  function () {
             'NODE_ENV': config.env.development ? 'development' : 'production'
         }
     })
-    .on('start', ['browser-sync'])
+    .on('start', [])
     .on('change', [])
     .on('restart', function () {
         console.log('restarted!');

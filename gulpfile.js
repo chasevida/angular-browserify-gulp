@@ -22,6 +22,7 @@ gulp.task('default', function(done) {
         'scripts',
         'server'
     ], [
+        'browser-sync',
         'watch',
         'test'
     ], done);
